@@ -1,8 +1,8 @@
 require 'rubygems'
 gem 'hoe', '>= 2.1.0'
 require 'hoe'
-# require 'fileutils'
-# require './lib/reittiopas'
+require 'fileutils'
+require './lib/reittiopas'
 
 Hoe.plugin :newgem
 
@@ -23,13 +23,12 @@ end
 require 'newgem/tasks'
 Dir['tasks/**/*.rake'].each { |t| load t }
 
-require 'gokdok'
+# remove_task :default
+# task :default => [:spec, :features]
 
+require 'gokdok'
 Gokdok::Dokker.new do |gd|
   gd.repo_url  = "git@github.com:raneksi/reittiopas.git"
   gd.rdoc_task = :docs
   gd.doc_home  = 'doc'
 end
-
-# remove_task :default
-# task :default => [:spec, :features]
