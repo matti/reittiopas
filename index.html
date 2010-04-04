@@ -1,1 +1,189 @@
-My GitHub Page
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>reittiopas-0.0.1 Documentation</title>
+
+	<link type="text/css" media="screen" href="rdoc.css" rel="stylesheet" />
+
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body class="indexpage">
+
+	
+	<h1>reittiopas-0.0.1 Documentation</h1>
+
+	
+	<div id="main">
+		
+<h2>DESCRIPTION:</h2>
+<p>
+<a href="Reittiopas.html">Reittiopas</a> is a Ruby library for accessing
+the <a
+href="http://developer.reittiopas.fi/pages/fi/reittiopas-api.php">Reittiopas
+Developer API</a>.
+</p>
+<p>
+Requires an account to the service that can be requested through <a
+href="http://developer.reittiopas.fi/pages/fi/accountrequest.php">the
+account request page</a>.
+</p>
+<h2>SYNOPSIS:</h2>
+<pre>
+ require 'reittiopas'
+ reittiopas = Reittiopas.new(:username =&gt; 'myuser', :password =&gt; 'lolcats')
+</pre>
+<h3>Geocoding</h3>
+<p>
+Search for location by keyword <em>tee</em>.
+</p>
+<pre>
+  location = reittiopas.location('tee').first
+  puts &quot;#{location}, #{location.city}&quot;
+  puts &quot;http://maps.google.com/maps?q=#{URI.escape location.coordinates[:wgs]}&quot;
+</pre>
+<p>
+Teeripuisto, Helsinki
+</p>
+<p>
+<a
+href="http://maps.google.com/maps?q=60.2528,%2025.02051">maps.google.com/maps?q=60.2528,%2025.02051</a>
+</p>
+<h3>Reverse geocoding</h3>
+<p>
+Search for a location by <a
+href="http://fi.wikipedia.org/wiki/Kartastokoordinaattij%C3%A4rjestelm%C3%A4">KKJ</a>
+coordinates.
+</p>
+<pre>
+  location = reittiopas.location(:x =&gt; 2546445, :y =&gt; 6675512).first
+  puts &quot;#{location}, #{location.city}&quot;
+</pre>
+<p>
+Otakaari 9, Espoo
+</p>
+<h2>REQUIREMENTS:</h2>
+<ul>
+<li><p>
+<a href="http://nokogiri.org/">Nokogiri</a>
+</p>
+</li>
+<li><p>
+<a href="http://github.com/sporkmonger/addressable">Addressable</a>
+</p>
+</li>
+</ul>
+<h2>LICENSE:</h2>
+<p>
+(The MIT License)
+</p>
+<p>
+Copyright &#169; 2010 Raine Virta
+</p>
+<p>
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the
+&#8216;Software&#8217;), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to the
+following conditions:
+</p>
+<p>
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+</p>
+<p>
+THE SOFTWARE IS PROVIDED &#8216;AS IS&#8217;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+USE OR OTHER DEALINGS IN THE SOFTWARE.
+</p>
+
+	</div>
+	
+
+	
+	
+	<h2>Files</h2>
+	<ul>
+		
+			<li class="file"><a href="History_txt.html">History.txt</a></li>
+		
+			<li class="file"><a href="Manifest_txt.html">Manifest.txt</a></li>
+		
+			<li class="file"><a href="README_rdoc.html">README.rdoc</a></li>
+		
+	</ul>
+	
+
+	<h2 id="classes">Classes/Modules</h2>
+	<ul>
+		
+		<li class="class"><a href="Reittiopas.html">Reittiopas</a></li>
+		
+		<li class="module"><a href="Reittiopas/Geocoding.html">Reittiopas::Geocoding</a></li>
+		
+		<li class="class"><a href="Reittiopas/HTTP.html">Reittiopas::HTTP</a></li>
+		
+		<li class="class"><a href="Reittiopas/Location.html">Reittiopas::Location</a></li>
+		
+		<li class="class"><a href="Reittiopas/Location/Coordinates/KKJ.html">Reittiopas::Location::Coordinates::KKJ</a></li>
+		
+		<li class="class"><a href="Reittiopas/Location/Coordinates/WGS.html">Reittiopas::Location::Coordinates::WGS</a></li>
+		
+		<li class="class"><a href="Reittiopas/Location/PointOfInterest.html">Reittiopas::Location::PointOfInterest</a></li>
+		
+		<li class="class"><a href="Reittiopas/Location/Stop.html">Reittiopas::Location::Stop</a></li>
+		
+		<li class="class"><a href="Reittiopas/Location/Street.html">Reittiopas::Location::Street</a></li>
+		
+		<li class="class"><a href="Object.html">Object</a></li>
+		
+	</ul>
+
+	<h2 id="methods">Methods</h2>
+	<ul>
+		
+			<li><a href="Reittiopas/Location/Coordinates/WGS.html#M000000">::new &mdash; Reittiopas::Location::Coordinates::WGS</a></li>
+		
+			<li><a href="Reittiopas/Location/Coordinates/KKJ.html#M000002">::new &mdash; Reittiopas::Location::Coordinates::KKJ</a></li>
+		
+			<li><a href="Reittiopas/HTTP.html#M000005">::new &mdash; Reittiopas::HTTP</a></li>
+		
+			<li><a href="Reittiopas.html#M000009">::new &mdash; Reittiopas</a></li>
+		
+			<li><a href="Reittiopas/Location.html#M000007">::parse &mdash; Reittiopas::Location</a></li>
+		
+			<li><a href="Object.html#M000010">#Reittiopas &mdash; Object</a></li>
+		
+			<li><a href="Reittiopas/HTTP.html#M000006">#get &mdash; Reittiopas::HTTP</a></li>
+		
+			<li><a href="Reittiopas/Geocoding.html#M000003">#location &mdash; Reittiopas::Geocoding</a></li>
+		
+			<li><a href="Reittiopas/Geocoding.html#M000004">#parse &mdash; Reittiopas::Geocoding</a></li>
+		
+			<li><a href="Reittiopas/Location.html#M000008">#to_s &mdash; Reittiopas::Location</a></li>
+		
+			<li><a href="Reittiopas/Location/Coordinates/WGS.html#M000001">#to_s &mdash; Reittiopas::Location::Coordinates::WGS</a></li>
+		
+	</ul>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>

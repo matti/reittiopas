@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Reittiopas::HTTP</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/reittiopas/http_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/reittiopas/http.rb">lib/reittiopas/http.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#M000005">::new</a></li>
+					
+					<li><a href="#M000006">#get</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../History_txt.html">History.txt</a></li>
+				
+					<li class="file"><a href="../Manifest_txt.html">Manifest.txt</a></li>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Reittiopas.html">Reittiopas</a></li>
+				
+					<li><a href="../Reittiopas/Geocoding.html">Reittiopas::Geocoding</a></li>
+				
+					<li><a href="../Reittiopas/HTTP.html">Reittiopas::HTTP</a></li>
+				
+					<li><a href="../Reittiopas/Location.html">Reittiopas::Location</a></li>
+				
+					<li><a href="../Reittiopas/Location/Coordinates/KKJ.html">Reittiopas::Location::Coordinates::KKJ</a></li>
+				
+					<li><a href="../Reittiopas/Location/Coordinates/WGS.html">Reittiopas::Location::Coordinates::WGS</a></li>
+				
+					<li><a href="../Reittiopas/Location/PointOfInterest.html">Reittiopas::Location::PointOfInterest</a></li>
+				
+					<li><a href="../Reittiopas/Location/Stop.html">Reittiopas::Location::Stop</a></li>
+				
+					<li><a href="../Reittiopas/Location/Street.html">Reittiopas::Location::Street</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Reittiopas::HTTP</h1>
+
+		<div id="description">
+			<p>
+<a href="HTTP.html">Reittiopas::HTTP</a> is initialized with account
+details upon initialization of a <a
+href="../Reittiopas.html">Reittiopas</a> object.
+</p>
+<p>
+Since <a href="../Reittiopas.html">Reittiopas</a> API is to be queried
+using GET requests with appropriate query parameters, <a
+href="HTTP.html">Reittiopas::HTTP</a> exists to simplify the process by
+offering a <tt>get</tt> method that accepts a hash containing the query
+parameters as an argument.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="API_BASE_URI">API_BASE_URI</a></dt>
+				
+				<dd class="description"><p>
+Base URI for the <a href="../Reittiopas.html">Reittiopas</a> API service.
+</p></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="api-uri-attribute-method" class="method-detail">
+				<a name="api_uri"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">api_uri</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Addressable::URI instance of the API URI with account details set as query
+parameters.
+</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="M000005"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(account)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Create a new <a href="HTTP.html">Reittiopas::HTTP</a> object.
+</p>
+<p>
+<tt>account</tt> should be a hash containing <tt>:username</tt> and
+<tt>:password</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/reittiopas/http.rb, line 22</span>
+22:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">account</span>)
+23:     <span class="ruby-ivar">@api_uri</span> = <span class="ruby-constant">Addressable</span><span class="ruby-operator">::</span><span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-constant">API_BASE_URI</span>)
+24:     <span class="ruby-ivar">@api_uri</span>.<span class="ruby-identifier">query_values</span> = {<span class="ruby-value">:user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">account</span>[<span class="ruby-value">:username</span>], <span class="ruby-value">:pass</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">account</span>[<span class="ruby-value">:password</span>]}
+25:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="get-method" class="method-detail ">
+				<a name="M000006"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get</span><span
+						class="method-args">(opts)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Send a GET request to the API with account details and <tt>opts</tt> as
+query parameters.
+</p>
+<ul>
+<li><p>
+<tt>opts</tt> — A hash containing query parameters. Values are
+automatically
+</p>
+</li>
+</ul>
+<p>
+encoded by Addressable::URI.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="get-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/reittiopas/http.rb, line 32</span>
+32:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get</span>(<span class="ruby-identifier">opts</span>)
+33:     <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">empty?</span>
+34:     <span class="ruby-identifier">uri</span> = <span class="ruby-ivar">@api_uri</span>.<span class="ruby-identifier">dup</span>
+35:     <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">opts</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">ov</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ov</span>.<span class="ruby-identifier">to_s</span> } <span class="ruby-comment cmt"># Coordinates to string</span>
+36:     <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">query_values</span> = <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">query_values</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">opts</span>)
+37:     <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">uri</span>)
+38:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+
