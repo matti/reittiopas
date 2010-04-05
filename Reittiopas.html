@@ -233,10 +233,13 @@ The version of <a href="Reittiopas.html">Reittiopas</a> you are using.
 					<p>
 Instantiate a <a href="Reittiopas.html">Reittiopas</a> object.
 </p>
-<p>
-<tt>account</tt> should be a hash containing <tt>:username</tt> and
-<tt>:password</tt>.
+<dl>
+<dt>account</dt><dd><p>
+A hash containing the keys <tt>:username</tt> and <tt>:password</tt> with
+their respective values.
 </p>
+</dd>
+</dl>
 <pre>
   Reittiopas.new(:username =&gt; 'exampleuser', :password =&gt; 'lolcat')</pre>
 					
@@ -245,10 +248,10 @@ Instantiate a <a href="Reittiopas.html">Reittiopas</a> object.
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/reittiopas/reittiopas.rb, line 12</span>
-12:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">account</span>)
-13:     <span class="ruby-ivar">@http</span> = <span class="ruby-constant">Reittiopas</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">account</span>)
-14:   <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/reittiopas/reittiopas.rb, line 13</span>
+13:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">account</span>)
+14:     <span class="ruby-ivar">@http</span> = <span class="ruby-constant">Reittiopas</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">account</span>)
+15:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
