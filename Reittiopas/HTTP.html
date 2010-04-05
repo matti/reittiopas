@@ -226,21 +226,24 @@ parameters.
 					<p>
 Create a new <a href="HTTP.html">Reittiopas::HTTP</a> object.
 </p>
-<p>
-<tt>account</tt> should be a hash containing <tt>:username</tt> and
-<tt>:password</tt>.
+<dl>
+<dt><b>account</b></dt><dd><p>
+A hash containing the keys <tt>:username</tt> and <tt>:password</tt> with
+their respective values.
 </p>
+</dd>
+</dl>
 					
 
 					
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/reittiopas/http.rb, line 22</span>
-22:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">account</span>)
-23:     <span class="ruby-ivar">@api_uri</span> = <span class="ruby-constant">Addressable</span><span class="ruby-operator">::</span><span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-constant">API_BASE_URI</span>)
-24:     <span class="ruby-ivar">@api_uri</span>.<span class="ruby-identifier">query_values</span> = {<span class="ruby-value">:user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">account</span>[<span class="ruby-value">:username</span>], <span class="ruby-value">:pass</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">account</span>[<span class="ruby-value">:password</span>]}
-25:   <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/reittiopas/http.rb, line 23</span>
+23:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">account</span>)
+24:     <span class="ruby-ivar">@api_uri</span> = <span class="ruby-constant">Addressable</span><span class="ruby-operator">::</span><span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-constant">API_BASE_URI</span>)
+25:     <span class="ruby-ivar">@api_uri</span>.<span class="ruby-identifier">query_values</span> = {<span class="ruby-value">:user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">account</span>[<span class="ruby-value">:username</span>], <span class="ruby-value">:pass</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">account</span>[<span class="ruby-value">:password</span>]}
+26:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -274,30 +277,27 @@ Create a new <a href="HTTP.html">Reittiopas::HTTP</a> object.
 Send a GET request to the API with account details and <tt>opts</tt> as
 query parameters.
 </p>
-<ul>
-<li><p>
-<tt>opts</tt> — A hash containing query parameters. Values are
-automatically
+<dl>
+<dt><b>opts</b></dt><dd><p>
+A hash containing query parameters. Values are automatically encoded by
+Addressable::URI.
 </p>
-</li>
-</ul>
-<p>
-encoded by Addressable::URI.
-</p>
+</dd>
+</dl>
 					
 
 					
 					<div class="method-source-code"
 						id="get-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/reittiopas/http.rb, line 32</span>
-32:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get</span>(<span class="ruby-identifier">opts</span>)
-33:     <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">empty?</span>
-34:     <span class="ruby-identifier">uri</span> = <span class="ruby-ivar">@api_uri</span>.<span class="ruby-identifier">dup</span>
-35:     <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">opts</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">ov</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ov</span>.<span class="ruby-identifier">to_s</span> } <span class="ruby-comment cmt"># Coordinates to string</span>
-36:     <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">query_values</span> = <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">query_values</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">opts</span>)
-37:     <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">uri</span>)
-38:   <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/reittiopas/http.rb, line 33</span>
+33:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get</span>(<span class="ruby-identifier">opts</span>)
+34:     <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">empty?</span>
+35:     <span class="ruby-identifier">uri</span> = <span class="ruby-ivar">@api_uri</span>.<span class="ruby-identifier">dup</span>
+36:     <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">opts</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">ov</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ov</span>.<span class="ruby-identifier">to_s</span> } <span class="ruby-comment cmt"># Coordinates to string</span>
+37:     <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">query_values</span> = <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">query_values</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">opts</span>)
+38:     <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">uri</span>)
+39:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
