@@ -182,250 +182,287 @@ a {
 <div class="example_group">
   <dl>
   <dt id="example_group_1">Reittiopas() when called with an account hash as argument</dt>
-    <script type="text/javascript">moveProgressBar('1.4');</script>
+    <script type="text/javascript">moveProgressBar('1.3');</script>
     <dd class="spec passed"><span class="passed_spec_name">should return a Reittiopas object</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_2">Reittiopas when initialized with an account</dt>
-    <script type="text/javascript">moveProgressBar('2.8');</script>
+  <dt id="example_group_2">Reittiopas when initializing with missing arguments</dt>
+    <script type="text/javascript">moveProgressBar('2.6');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should raise ArgumentError if password is missing</span></dd>
+    <script type="text/javascript">moveProgressBar('3.9');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should raise ArgumentError if username is missing</span></dd>
+  </dl>
+</div>
+<div class="example_group">
+  <dl>
+  <dt id="example_group_3">Reittiopas when initialized with an account</dt>
+    <script type="text/javascript">moveProgressBar('5.2');</script>
     <dd class="spec passed"><span class="passed_spec_name">should respond to #location</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_3">Reittiopas#location when given key 'tee' that returns 18 locations from API</dt>
-    <script type="text/javascript">moveProgressBar('4.2');</script>
+  <dt id="example_group_4">Reittiopas#location when given key 'tee' that returns 18 locations from API</dt>
+    <script type="text/javascript">moveProgressBar('6.5');</script>
     <dd class="spec passed"><span class="passed_spec_name">should return 18 locations in an array</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_4">Reittiopas#location when given KKJ coordinates that return one location from API</dt>
-    <script type="text/javascript">moveProgressBar('5.7');</script>
+  <dt id="example_group_5">Reittiopas#location when given KKJ coordinates that return one location from API</dt>
+    <script type="text/javascript">moveProgressBar('7.8');</script>
     <dd class="spec passed"><span class="passed_spec_name">should return one result</span></dd>
-    <script type="text/javascript">moveProgressBar('7.1');</script>
+    <script type="text/javascript">moveProgressBar('9.2');</script>
     <dd class="spec passed"><span class="passed_spec_name">should return a location</span></dd>
-    <script type="text/javascript">moveProgressBar('8.5');</script>
+    <script type="text/javascript">moveProgressBar('10.5');</script>
     <dd class="spec passed"><span class="passed_spec_name">should return a location with KKJ coordinates</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_5">Reittiopas::HTTP</dt>
-    <script type="text/javascript">moveProgressBar('10.0');</script>
+  <dt id="example_group_6">Reittiopas::HTTP</dt>
+    <script type="text/javascript">moveProgressBar('11.8');</script>
     <dd class="spec passed"><span class="passed_spec_name">should have the proper base API URI</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_6">Reittiopas::HTTP when initialized with an account</dt>
-    <script type="text/javascript">moveProgressBar('11.4');</script>
+  <dt id="example_group_7">Reittiopas::HTTP when initialized with an account</dt>
+    <script type="text/javascript">moveProgressBar('13.1');</script>
     <dd class="spec passed"><span class="passed_spec_name">should respond to #get</span></dd>
-    <script type="text/javascript">moveProgressBar('12.8');</script>
+    <script type="text/javascript">moveProgressBar('14.4');</script>
     <dd class="spec passed"><span class="passed_spec_name">should create an API URI with account details</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_7">Reittiopas::HTTP#get with empty hash as argument</dt>
-    <script type="text/javascript">moveProgressBar('14.2');</script>
+  <dt id="example_group_8">Reittiopas::HTTP#get with empty hash as argument</dt>
+    <script type="text/javascript">moveProgressBar('15.7');</script>
     <dd class="spec passed"><span class="passed_spec_name">should raise ArgumentError</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_8">Reittiopas::HTTP#get with proper hash as argument</dt>
-    <script type="text/javascript">moveProgressBar('15.7');</script>
-    <dd class="spec passed"><span class="passed_spec_name">should create a request</span></dd>
+  <dt id="example_group_9">Reittiopas::HTTP#get with proper hash as argument</dt>
     <script type="text/javascript">moveProgressBar('17.1');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should create a request</span></dd>
+    <script type="text/javascript">moveProgressBar('18.4');</script>
     <dd class="spec passed"><span class="passed_spec_name">should return response body on successful request</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_9">Reittiopas::Location</dt>
-    <script type="text/javascript">moveProgressBar('18.5');</script>
+  <dt id="example_group_10">Reittiopas::Location</dt>
+    <script type="text/javascript">moveProgressBar('19.7');</script>
     <dd class="spec passed"><span class="passed_spec_name">should respond to #name</span></dd>
-    <script type="text/javascript">moveProgressBar('20.0');</script>
+    <script type="text/javascript">moveProgressBar('21.0');</script>
     <dd class="spec passed"><span class="passed_spec_name">should respond to #city</span></dd>
-    <script type="text/javascript">moveProgressBar('21.4');</script>
+    <script type="text/javascript">moveProgressBar('22.3');</script>
     <dd class="spec passed"><span class="passed_spec_name">should respond to #type</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_10">Reittiopas::Location#parse when given LOC example 1</dt>
-    <script type="text/javascript">moveProgressBar('22.8');</script>
+  <dt id="example_group_11">Reittiopas::Location#parse when given LOC example 1</dt>
+    <script type="text/javascript">moveProgressBar('23.6');</script>
     <dd class="spec passed"><span class="passed_spec_name">should be a kind of Reittiopas::Location::Stop</span></dd>
-    <script type="text/javascript">moveProgressBar('24.2');</script>
+    <script type="text/javascript">moveProgressBar('25.0');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql &quot;Ratsukuja&quot;</span></dd>
-    <script type="text/javascript">moveProgressBar('25.7');</script>
+    <script type="text/javascript">moveProgressBar('26.3');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql &quot;Espoo&quot;</span></dd>
-    <script type="text/javascript">moveProgressBar('27.1');</script>
+    <script type="text/javascript">moveProgressBar('27.6');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql &quot;Sello&quot;</span></dd>
-    <script type="text/javascript">moveProgressBar('28.5');</script>
+    <script type="text/javascript">moveProgressBar('28.9');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql 10</span></dd>
-    <script type="text/javascript">moveProgressBar('30.0');</script>
+    <script type="text/javascript">moveProgressBar('30.2');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql 2112201</span></dd>
-    <script type="text/javascript">moveProgressBar('31.4');</script>
+    <script type="text/javascript">moveProgressBar('31.5');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql 2545011</span></dd>
     <script type="text/javascript">moveProgressBar('32.8');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql 6678850</span></dd>
     <script type="text/javascript">moveProgressBar('34.2');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql 24.80882</span></dd>
-    <script type="text/javascript">moveProgressBar('35.7');</script>
+    <script type="text/javascript">moveProgressBar('35.5');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql 60.21867</span></dd>
-    <script type="text/javascript">moveProgressBar('37.1');</script>
+    <script type="text/javascript">moveProgressBar('36.8');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql &quot;Sello&quot;</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_11">Reittiopas::Location#parse when given LOC example 2</dt>
-    <script type="text/javascript">moveProgressBar('38.5');</script>
+  <dt id="example_group_12">Reittiopas::Location#parse when given LOC example 2</dt>
+    <script type="text/javascript">moveProgressBar('38.1');</script>
     <dd class="spec passed"><span class="passed_spec_name">should be a kind of Reittiopas::Location::Street</span></dd>
-    <script type="text/javascript">moveProgressBar('40.0');</script>
+    <script type="text/javascript">moveProgressBar('39.4');</script>
     <dd class="spec passed"><span class="passed_spec_name">should not respond to #address</span></dd>
-    <script type="text/javascript">moveProgressBar('41.4');</script>
+    <script type="text/javascript">moveProgressBar('40.7');</script>
     <dd class="spec passed"><span class="passed_spec_name">should not respond to #code</span></dd>
-    <script type="text/javascript">moveProgressBar('42.8');</script>
+    <script type="text/javascript">moveProgressBar('42.1');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql &quot;Espoo&quot;</span></dd>
-    <script type="text/javascript">moveProgressBar('44.2');</script>
+    <script type="text/javascript">moveProgressBar('43.4');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql &quot;Kahisevantie&quot;</span></dd>
-    <script type="text/javascript">moveProgressBar('45.7');</script>
+    <script type="text/javascript">moveProgressBar('44.7');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql 900</span></dd>
-    <script type="text/javascript">moveProgressBar('47.1');</script>
+    <script type="text/javascript">moveProgressBar('46.0');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql 2</span></dd>
-    <script type="text/javascript">moveProgressBar('48.5');</script>
+    <script type="text/javascript">moveProgressBar('47.3');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql 2541494</span></dd>
-    <script type="text/javascript">moveProgressBar('50.0');</script>
+    <script type="text/javascript">moveProgressBar('48.6');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql 6680344</span></dd>
-    <script type="text/javascript">moveProgressBar('51.4');</script>
+    <script type="text/javascript">moveProgressBar('50.0');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql 24.74568</span></dd>
-    <script type="text/javascript">moveProgressBar('52.8');</script>
+    <script type="text/javascript">moveProgressBar('51.3');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql 60.23245</span></dd>
-    <script type="text/javascript">moveProgressBar('54.2');</script>
+    <script type="text/javascript">moveProgressBar('52.6');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql &quot;Kahisevantie 2&quot;</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_12">Reittiopas::Location#parse when given LOC example 3</dt>
-    <script type="text/javascript">moveProgressBar('55.7');</script>
+  <dt id="example_group_13">Reittiopas::Location#parse when given LOC example 3</dt>
+    <script type="text/javascript">moveProgressBar('53.9');</script>
     <dd class="spec passed"><span class="passed_spec_name">should be a kind of Reittiopas::Location::PointOfInterest</span></dd>
-    <script type="text/javascript">moveProgressBar('57.1');</script>
+    <script type="text/javascript">moveProgressBar('55.2');</script>
     <dd class="spec passed"><span class="passed_spec_name">should not respond to #address</span></dd>
-    <script type="text/javascript">moveProgressBar('58.5');</script>
+    <script type="text/javascript">moveProgressBar('56.5');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql &quot;Helsinki&quot;</span></dd>
-    <script type="text/javascript">moveProgressBar('60.0');</script>
+    <script type="text/javascript">moveProgressBar('57.8');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql &quot;Teeripuisto&quot;</span></dd>
-    <script type="text/javascript">moveProgressBar('61.4');</script>
+    <script type="text/javascript">moveProgressBar('59.2');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql 3</span></dd>
-    <script type="text/javascript">moveProgressBar('62.8');</script>
+    <script type="text/javascript">moveProgressBar('60.5');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql 2556686</span></dd>
-    <script type="text/javascript">moveProgressBar('64.2');</script>
+    <script type="text/javascript">moveProgressBar('61.8');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql 6682815</span></dd>
-    <script type="text/javascript">moveProgressBar('65.7');</script>
+    <script type="text/javascript">moveProgressBar('63.1');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql 25.02051</span></dd>
-    <script type="text/javascript">moveProgressBar('67.1');</script>
+    <script type="text/javascript">moveProgressBar('64.4');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql 60.2528</span></dd>
-    <script type="text/javascript">moveProgressBar('68.5');</script>
+    <script type="text/javascript">moveProgressBar('65.7');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql &quot;Teeripuisto&quot;</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_13">Reittiopas::Location#parse when given LOC example 4</dt>
-    <script type="text/javascript">moveProgressBar('70.0');</script>
+  <dt id="example_group_14">Reittiopas::Location#parse when given LOC example 4</dt>
+    <script type="text/javascript">moveProgressBar('67.1');</script>
     <dd class="spec passed"><span class="passed_spec_name">should be a kind of Reittiopas::Location</span></dd>
-    <script type="text/javascript">moveProgressBar('71.4');</script>
+    <script type="text/javascript">moveProgressBar('68.4');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql &quot;Espoo&quot;</span></dd>
-    <script type="text/javascript">moveProgressBar('72.8');</script>
+    <script type="text/javascript">moveProgressBar('69.7');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql &quot;Otakaari&quot;</span></dd>
-    <script type="text/javascript">moveProgressBar('74.2');</script>
+    <script type="text/javascript">moveProgressBar('71.0');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql 9</span></dd>
-    <script type="text/javascript">moveProgressBar('75.7');</script>
+    <script type="text/javascript">moveProgressBar('72.3');</script>
     <dd class="spec passed"><span class="passed_spec_name">should not respond to #address</span></dd>
-    <script type="text/javascript">moveProgressBar('77.1');</script>
+    <script type="text/javascript">moveProgressBar('73.6');</script>
     <dd class="spec passed"><span class="passed_spec_name">should not respond to #code</span></dd>
-    <script type="text/javascript">moveProgressBar('78.5');</script>
+    <script type="text/javascript">moveProgressBar('75.0');</script>
     <dd class="spec passed"><span class="passed_spec_name">should not be</span></dd>
-    <script type="text/javascript">moveProgressBar('80.0');</script>
+    <script type="text/javascript">moveProgressBar('76.3');</script>
     <dd class="spec passed"><span class="passed_spec_name">should not be</span></dd>
-    <script type="text/javascript">moveProgressBar('81.4');</script>
+    <script type="text/javascript">moveProgressBar('77.6');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql &quot;Otakaari 9&quot;</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_14">Reittiopas::Location#parse when given LOC has 'poi' as category</dt>
-    <script type="text/javascript">moveProgressBar('82.8');</script>
+  <dt id="example_group_15">Reittiopas::Location#parse when given LOC has 'poi' as category</dt>
+    <script type="text/javascript">moveProgressBar('78.9');</script>
     <dd class="spec passed"><span class="passed_spec_name">should return a Location</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_15">Reittiopas::Location#parse when given LOC has 'stop' as category</dt>
-    <script type="text/javascript">moveProgressBar('84.2');</script>
+  <dt id="example_group_16">Reittiopas::Location#parse when given LOC has 'stop' as category</dt>
+    <script type="text/javascript">moveProgressBar('80.2');</script>
     <dd class="spec passed"><span class="passed_spec_name">should return a Stop</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_16">Reittiopas::Location#parse when given LOC has 'street' as category</dt>
-    <script type="text/javascript">moveProgressBar('85.7');</script>
+  <dt id="example_group_17">Reittiopas::Location#parse when given LOC has 'street' as category</dt>
+    <script type="text/javascript">moveProgressBar('81.5');</script>
     <dd class="spec passed"><span class="passed_spec_name">should return a Street</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_17">Reittiopas::Location::PointOfInterest</dt>
-    <script type="text/javascript">moveProgressBar('87.1');</script>
+  <dt id="example_group_18">Reittiopas::Location::PointOfInterest</dt>
+    <script type="text/javascript">moveProgressBar('82.8');</script>
     <dd class="spec passed"><span class="passed_spec_name">should respond to #code</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_18">Reittiopas::Location::Stop</dt>
-    <script type="text/javascript">moveProgressBar('88.5');</script>
+  <dt id="example_group_19">Reittiopas::Location::Stop</dt>
+    <script type="text/javascript">moveProgressBar('84.2');</script>
     <dd class="spec passed"><span class="passed_spec_name">should respond to #address</span></dd>
-    <script type="text/javascript">moveProgressBar('90.0');</script>
+    <script type="text/javascript">moveProgressBar('85.5');</script>
     <dd class="spec passed"><span class="passed_spec_name">should respond to #code</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_19">Reittiopas::Location::Street</dt>
-    <script type="text/javascript">moveProgressBar('91.4');</script>
+  <dt id="example_group_20">Reittiopas::Location::Street</dt>
+    <script type="text/javascript">moveProgressBar('86.8');</script>
     <dd class="spec passed"><span class="passed_spec_name">should respond to #number</span></dd>
-    <script type="text/javascript">moveProgressBar('92.8');</script>
+    <script type="text/javascript">moveProgressBar('88.1');</script>
     <dd class="spec passed"><span class="passed_spec_name">should not respond to #code</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_20">Reittiopas::Location::Coordinates::KKJ</dt>
-    <script type="text/javascript">moveProgressBar('94.2');</script>
+  <dt id="example_group_21">Reittiopas::Location::Coordinates::KKJ</dt>
+    <script type="text/javascript">moveProgressBar('89.4');</script>
     <dd class="spec passed"><span class="passed_spec_name">should respond to #x</span></dd>
-    <script type="text/javascript">moveProgressBar('95.7');</script>
+    <script type="text/javascript">moveProgressBar('90.7');</script>
     <dd class="spec passed"><span class="passed_spec_name">should respond to #y</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_21">Reittiopas::Location::Coordinates::WGS</dt>
-    <script type="text/javascript">moveProgressBar('97.1');</script>
+  <dt id="example_group_22">Reittiopas::Location::Coordinates::WGS</dt>
+    <script type="text/javascript">moveProgressBar('92.1');</script>
     <dd class="spec passed"><span class="passed_spec_name">should respond to #latitude</span></dd>
-    <script type="text/javascript">moveProgressBar('98.5');</script>
+    <script type="text/javascript">moveProgressBar('93.4');</script>
     <dd class="spec passed"><span class="passed_spec_name">should respond to #longitude</span></dd>
-    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <script type="text/javascript">moveProgressBar('94.7');</script>
     <dd class="spec passed"><span class="passed_spec_name">should eql &quot;60.23245, 24.74568&quot;</span></dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.201222 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "70 examples, 0 failures";</script>
+<div class="example_group">
+  <dl>
+  <dt id="example_group_23">Hash#assert_valid_keys when invalid keys are found</dt>
+    <script type="text/javascript">moveProgressBar('96.0');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should raise ArgumentError when invalid keys are found</span></dd>
+  </dl>
+</div>
+<div class="example_group">
+  <dl>
+  <dt id="example_group_24">Hash#assert_required_keys when required keys are missing</dt>
+    <script type="text/javascript">moveProgressBar('97.3');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should raise ArgumentError</span></dd>
+  </dl>
+</div>
+<div class="example_group">
+  <dl>
+  <dt id="example_group_25">Hash#assert_required_and_valid_keys when invalid keys are found and required keys are missing</dt>
+    <script type="text/javascript">moveProgressBar('98.6');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should raise ArgumentError</span></dd>
+  </dl>
+</div>
+<div class="example_group">
+  <dl>
+  <dt id="example_group_26">Hash#assert_valid_values</dt>
+    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should raise ArgumentError when invalid value doesn't match expectation</span></dd>
+  </dl>
+</div>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.20617 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "76 examples, 0 failures";</script>
 </div>
 </div>
 </body>
