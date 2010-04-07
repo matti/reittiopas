@@ -124,6 +124,8 @@
 				
 					<li><a href="../Reittiopas/Location/Street.html">Reittiopas::Location::Street</a></li>
 				
+					<li><a href="../Hash.html">Hash</a></li>
+				
 					<li><a href="../Object.html">Object</a></li>
 				
 				</ul>
@@ -213,11 +215,12 @@ Search for location by KKJ coordinates x: <em>2546445</em>, y:
 22:     <span class="ruby-identifier">params</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span>
 23:       {<span class="ruby-value">:key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">opts</span>}
 24:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Hash</span>
-25:       <span class="ruby-identifier">opts</span>
-26:     <span class="ruby-keyword kw">end</span>
-27: 
-28:     <span class="ruby-identifier">parse</span> <span class="ruby-ivar">@http</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">params</span>), <span class="ruby-identifier">opts</span>
-29:   <span class="ruby-keyword kw">end</span></pre>
+25:       <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">assert_required_and_valid_keys</span> <span class="ruby-value">:x</span>, <span class="ruby-value">:y</span>
+26:       <span class="ruby-identifier">opts</span>
+27:     <span class="ruby-keyword kw">end</span>
+28: 
+29:     <span class="ruby-identifier">parse</span> <span class="ruby-ivar">@http</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">params</span>), <span class="ruby-identifier">opts</span>
+30:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -262,28 +265,28 @@ Raw XML received from API.
 					<div class="method-source-code"
 						id="parse-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/reittiopas/geocoding.rb, line 35</span>
-35:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">xml</span>, <span class="ruby-identifier">opts</span>)
-36:     <span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-identifier">xml</span>)
-37: 
-38:     <span class="ruby-identifier">locations</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">search</span>(<span class="ruby-value str">'LOC'</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">loc</span><span class="ruby-operator">|</span>
-39:       <span class="ruby-constant">Reittiopas</span><span class="ruby-operator">::</span><span class="ruby-constant">Location</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">loc</span>)
-40:     <span class="ruby-keyword kw">end</span>
-41: 
-42:     <span class="ruby-comment cmt"># Add KKJ coordinates from REVERSE tag to each Location returned</span>
-43:     <span class="ruby-comment cmt"># in case it was a reverse geocoding query</span>
-44:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Hash</span>
-45:       <span class="ruby-identifier">reverse</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">search</span>(<span class="ruby-value str">'REVERSE'</span>).<span class="ruby-identifier">last</span>
-46:       <span class="ruby-identifier">x</span> = <span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">get_attr_value</span>(<span class="ruby-value str">'x'</span>).<span class="ruby-identifier">to_i</span>
-47:       <span class="ruby-identifier">y</span> = <span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">get_attr_value</span>(<span class="ruby-value str">'y'</span>).<span class="ruby-identifier">to_i</span>
-48: 
-49:       <span class="ruby-identifier">locations</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">loc</span><span class="ruby-operator">|</span>
-50:         <span class="ruby-identifier">loc</span>.<span class="ruby-identifier">coordinates</span> = { <span class="ruby-value">:kkj</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Reittiopas</span><span class="ruby-operator">::</span><span class="ruby-constant">Location</span><span class="ruby-operator">::</span><span class="ruby-constant">Coordinates</span><span class="ruby-operator">::</span><span class="ruby-constant">KKJ</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:x</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">x</span>, <span class="ruby-value">:y</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">y</span>) }
-51:       <span class="ruby-keyword kw">end</span>
-52:     <span class="ruby-keyword kw">end</span>
-53: 
-54:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">locations</span>
-55:   <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/reittiopas/geocoding.rb, line 36</span>
+36:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">xml</span>, <span class="ruby-identifier">opts</span>)
+37:     <span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-identifier">xml</span>)
+38: 
+39:     <span class="ruby-identifier">locations</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">search</span>(<span class="ruby-value str">'LOC'</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">loc</span><span class="ruby-operator">|</span>
+40:       <span class="ruby-constant">Reittiopas</span><span class="ruby-operator">::</span><span class="ruby-constant">Location</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">loc</span>)
+41:     <span class="ruby-keyword kw">end</span>
+42: 
+43:     <span class="ruby-comment cmt"># Add KKJ coordinates from REVERSE tag to each Location returned</span>
+44:     <span class="ruby-comment cmt"># in case it was a reverse geocoding query</span>
+45:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Hash</span>
+46:       <span class="ruby-identifier">reverse</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">search</span>(<span class="ruby-value str">'REVERSE'</span>).<span class="ruby-identifier">last</span>
+47:       <span class="ruby-identifier">x</span> = <span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">get_attr_value</span>(<span class="ruby-value str">'x'</span>).<span class="ruby-identifier">to_i</span>
+48:       <span class="ruby-identifier">y</span> = <span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">get_attr_value</span>(<span class="ruby-value str">'y'</span>).<span class="ruby-identifier">to_i</span>
+49: 
+50:       <span class="ruby-identifier">locations</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">loc</span><span class="ruby-operator">|</span>
+51:         <span class="ruby-identifier">loc</span>.<span class="ruby-identifier">coordinates</span> = { <span class="ruby-value">:kkj</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Reittiopas</span><span class="ruby-operator">::</span><span class="ruby-constant">Location</span><span class="ruby-operator">::</span><span class="ruby-constant">Coordinates</span><span class="ruby-operator">::</span><span class="ruby-constant">KKJ</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:x</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">x</span>, <span class="ruby-value">:y</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">y</span>) }
+52:       <span class="ruby-keyword kw">end</span>
+53:     <span class="ruby-keyword kw">end</span>
+54: 
+55:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">locations</span>
+56:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
