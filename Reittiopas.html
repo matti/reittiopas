@@ -41,6 +41,9 @@
 						<li><a href="./lib/reittiopas/coordinates_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
 							class="thickbox" title="lib/reittiopas/coordinates.rb">lib/reittiopas/coordinates.rb</a></li>
 					
+						<li><a href="./lib/reittiopas/exceptions_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/reittiopas/exceptions.rb">lib/reittiopas/exceptions.rb</a></li>
+					
 						<li><a href="./lib/reittiopas/geocoding_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
 							class="thickbox" title="lib/reittiopas/geocoding.rb">lib/reittiopas/geocoding.rb</a></li>
 					
@@ -83,6 +86,8 @@
 					
 					<li><span class="type">MODULE</span> <a href="Reittiopas/Geocoding.html">Reittiopas::Geocoding</a></li>
 					
+					<li><span class="type">CLASS</span> <a href="Reittiopas/AccessError.html">Reittiopas::AccessError</a></li>
+					
 					<li><span class="type">CLASS</span> <a href="Reittiopas/HTTP.html">Reittiopas::HTTP</a></li>
 					
 					<li><span class="type">CLASS</span> <a href="Reittiopas/Location.html">Reittiopas::Location</a></li>
@@ -97,7 +102,7 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000009">::new</a></li>
+					<li><a href="#method-c-new">::new</a></li>
 					
 				</ul>
 			</div>
@@ -151,6 +156,8 @@
 				<ul class="link-list">
 				
 					<li><a href="./Reittiopas.html">Reittiopas</a></li>
+				
+					<li><a href="./Reittiopas/AccessError.html">Reittiopas::AccessError</a></li>
 				
 					<li><a href="./Reittiopas/Geocoding.html">Reittiopas::Geocoding</a></li>
 				
@@ -220,7 +227,7 @@ The version of <a href="Reittiopas.html">Reittiopas</a> you are using.
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000009"></a>
+				<a name="method-c-new"></a>
 
 				<div class="method-heading">
 				
@@ -252,8 +259,9 @@ their respective values.
 <pre>
     <span class="ruby-comment cmt"># File lib/reittiopas/reittiopas.rb, line 13</span>
 13:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">account</span>)
-14:     <span class="ruby-ivar">@http</span> = <span class="ruby-constant">Reittiopas</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">account</span>)
-15:   <span class="ruby-keyword kw">end</span></pre>
+14:     <span class="ruby-identifier">account</span>.<span class="ruby-identifier">assert_required_and_valid_keys</span> <span class="ruby-value">:username</span>, <span class="ruby-value">:password</span>
+15:     <span class="ruby-ivar">@http</span> = <span class="ruby-constant">Reittiopas</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">account</span>)
+16:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

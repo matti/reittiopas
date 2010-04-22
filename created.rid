@@ -1,1 +1,12 @@
-Wed, 07 Apr 2010 03:01:49 +0300
+Thu, 22 Apr 2010 22:08:02 +0300
+History.txt	Wed, 21 Apr 2010 23:18:54 +0300
+lib/reittiopas/geocoding.rb	Thu, 22 Apr 2010 02:54:59 +0300
+lib/reittiopas/utils.rb	Wed, 07 Apr 2010 03:57:32 +0300
+lib/reittiopas/coordinates.rb	Wed, 07 Apr 2010 01:58:44 +0300
+lib/reittiopas/reittiopas.rb	Wed, 07 Apr 2010 16:51:54 +0300
+README.rdoc	Thu, 22 Apr 2010 22:03:31 +0300
+lib/reittiopas.rb	Thu, 22 Apr 2010 22:02:38 +0300
+lib/reittiopas/exceptions.rb	Wed, 07 Apr 2010 17:03:05 +0300
+Manifest.txt	Thu, 22 Apr 2010 22:02:01 +0300
+lib/reittiopas/location.rb	Mon, 05 Apr 2010 14:10:45 +0300
+lib/reittiopas/http.rb	Thu, 22 Apr 2010 21:58:11 +0300

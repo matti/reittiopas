@@ -69,9 +69,9 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000005">::new</a></li>
+					<li><a href="#method-c-new">::new</a></li>
 					
-					<li><a href="#M000006">#get</a></li>
+					<li><a href="#method-i-get">#get</a></li>
 					
 				</ul>
 			</div>
@@ -114,6 +114,8 @@
 				<ul class="link-list">
 				
 					<li><a href="../Reittiopas.html">Reittiopas</a></li>
+				
+					<li><a href="../Reittiopas/AccessError.html">Reittiopas::AccessError</a></li>
 				
 					<li><a href="../Reittiopas/Geocoding.html">Reittiopas::Geocoding</a></li>
 				
@@ -213,7 +215,7 @@ parameters.
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000005"></a>
+				<a name="method-c-new"></a>
 
 				<div class="method-heading">
 				
@@ -263,7 +265,7 @@ their respective values.
 
 		
 			<div id="get-method" class="method-detail ">
-				<a name="M000006"></a>
+				<a name="method-i-get"></a>
 
 				<div class="method-heading">
 				
@@ -298,8 +300,17 @@ Addressable::URI.
 35:     <span class="ruby-identifier">uri</span> = <span class="ruby-ivar">@api_uri</span>.<span class="ruby-identifier">dup</span>
 36:     <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">opts</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">ov</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ov</span>.<span class="ruby-identifier">to_s</span> } <span class="ruby-comment cmt"># Coordinates to string</span>
 37:     <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">query_values</span> = <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">query_values</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">opts</span>)
-38:     <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">uri</span>)
-39:   <span class="ruby-keyword kw">end</span></pre>
+38: 
+39:     <span class="ruby-comment cmt"># TODO ugly workaround until addressable's author updates the game</span>
+40:     <span class="ruby-identifier">body</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">uri</span>.<span class="ruby-identifier">to_s</span>))
+41: 
+42:     <span class="ruby-comment cmt"># API responses with 200 OK in case of invalid account, so...</span>
+43:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">body</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/No rights to access API./</span>
+44:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">AccessError</span>, <span class="ruby-value str">'Most likely due to invalid account details'</span>
+45:     <span class="ruby-keyword kw">end</span>
+46: 
+47:     <span class="ruby-identifier">body</span>
+48:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

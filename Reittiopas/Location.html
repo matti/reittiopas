@@ -87,9 +87,9 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000007">::parse</a></li>
+					<li><a href="#method-c-parse">::parse</a></li>
 					
-					<li><a href="#M000008">#to_s</a></li>
+					<li><a href="#method-i-to_s">#to_s</a></li>
 					
 				</ul>
 			</div>
@@ -132,6 +132,8 @@
 				<ul class="link-list">
 				
 					<li><a href="../Reittiopas.html">Reittiopas</a></li>
+				
+					<li><a href="../Reittiopas/AccessError.html">Reittiopas::AccessError</a></li>
 				
 					<li><a href="../Reittiopas/Geocoding.html">Reittiopas::Geocoding</a></li>
 				
@@ -286,7 +288,7 @@ Get the street number of the location.
 
 		
 			<div id="parse-method" class="method-detail ">
-				<a name="M000007"></a>
+				<a name="method-c-parse"></a>
 
 				<div class="method-heading">
 				
@@ -336,11 +338,11 @@ Nokogiri::XML::Element object containing location data.
 47:     <span class="ruby-identifier">coordinates</span> = {}
 48: 
 49:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">attr</span>[<span class="ruby-value str">&quot;x&quot;</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">attr</span>[<span class="ruby-value str">&quot;y&quot;</span>]
-50:       <span class="ruby-identifier">coordinates</span>[<span class="ruby-value">:kkj</span>] = <span class="ruby-constant">Coordinates</span><span class="ruby-operator">::</span><span class="ruby-constant">KKJ</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Hash</span>[*<span class="ruby-node">]x y)</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">e</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">attr</span>[<span class="ruby-identifier">e</span>].<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_i</span>] }.<span class="ruby-identifier">flatten</span>])
+50:       <span class="ruby-identifier">coordinates</span>[<span class="ruby-value">:kkj</span>] = <span class="ruby-constant">Coordinates</span><span class="ruby-operator">::</span><span class="ruby-constant">KKJ</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Hash</span>[*<span class="ruby-node">%(x y)</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">e</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">attr</span>[<span class="ruby-identifier">e</span>].<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_i</span>] }.<span class="ruby-identifier">flatten</span>])
 51:     <span class="ruby-keyword kw">end</span>
 52: 
 53:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">attr</span>[<span class="ruby-value str">&quot;lat&quot;</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">attr</span>[<span class="ruby-value str">&quot;lon&quot;</span>]
-54:       <span class="ruby-identifier">coordinates</span>[<span class="ruby-value">:wgs</span>] = <span class="ruby-constant">Coordinates</span><span class="ruby-operator">::</span><span class="ruby-constant">WGS</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Hash</span>[*<span class="ruby-node">]lat lon)</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">e</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">attr</span>[<span class="ruby-identifier">e</span>].<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_f</span>] }.<span class="ruby-identifier">flatten</span>])
+54:       <span class="ruby-identifier">coordinates</span>[<span class="ruby-value">:wgs</span>] = <span class="ruby-constant">Coordinates</span><span class="ruby-operator">::</span><span class="ruby-constant">WGS</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Hash</span>[*<span class="ruby-node">%(lat lon)</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">e</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">attr</span>[<span class="ruby-identifier">e</span>].<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_f</span>] }.<span class="ruby-identifier">flatten</span>])
 55:     <span class="ruby-keyword kw">end</span>
 56: 
 57:     <span class="ruby-identifier">loc</span>.<span class="ruby-identifier">coordinates</span> = <span class="ruby-identifier">coordinates</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">coordinates</span>.<span class="ruby-identifier">empty?</span>
@@ -364,7 +366,7 @@ Nokogiri::XML::Element object containing location data.
 
 		
 			<div id="to-s-method" class="method-detail ">
-				<a name="M000008"></a>
+				<a name="method-i-to_s"></a>
 
 				<div class="method-heading">
 				
